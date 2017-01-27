@@ -84,20 +84,31 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="container" >
-				<div className="col-sm-6 sidenav">
-					<ul>
-						<li><a href="/" onClick={this.transition}>Home</a></li>
-						<li><a href="/introduction" onClick={this.transition}>Introduction</a></li>
-						<li><a href="/participant" onClick={this.transition}>Participant</a></li>
-						<li><a href="/pay" onClick={this.transition}>Pay</a></li>
-						<li><a href="/volunteer" onClick={this.transition}>Volunteer</a></li>
-						<li><a href="/confirm" onClick={this.transition}>Confirmation</a></li>
-						<li><a href="/admin" onClick={this.transition}>Administration</a></li>
-					</ul>
-				</div>
-				<div className="col-sm-6 main" >
-					<p>{this.state.page}</p>
+			<div className="container-fluid" >
+				<div className="row">
+	                <div className="col-sm-3">
+						<div className="nav-side-menu">
+						    <div className="brand">Mountainside Cub Scout</div>
+						    <i className="glyphicon glyphicon-th-list toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>				  
+					        <div className="menu-list">			  
+					            <ul id="menu-content" className="menu-content collapse out">
+									<li><a href="/" onClick={this.transition}><span className="glyphicon glyphicon-home"></span> Home</a></li>
+									<li><a href="/introduction" onClick={this.transition}><span className="glyphicon glyphicon-volume-up"></span> Introduction</a></li>
+									<li><a href="/participant" onClick={this.transition}><span className="glyphicon glyphicon-user"></span> Participant</a></li>
+									<li><a href="/pay" onClick={this.transition}><span className="glyphicon glyphicon-usd"></span> Pay</a></li>
+									<li><a href="/volunteer" onClick={this.transition}><span className="glyphicon glyphicon-flag"></span> Volunteer</a></li>
+									<li><a href="/confirm" onClick={this.transition}><span className="glyphicon glyphicon-saved"></span> Confirmation</a></li>
+									<li><a href="/admin" onClick={this.transition}><span className="glyphicon glyphicon-wrench"></span> Administration</a></li>
+									<li><a href="/logout" onClick={this.transition}><span className="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+								</ul>
+							</div>					
+						</div>
+					</div>
+					<div className="col-sm-9">
+						<div className="main" >
+							<p>{this.state.page}</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
